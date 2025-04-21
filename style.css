@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: black; 
     color: red;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
@@ -8,28 +8,56 @@ body {
 }
 
 #logo {
-    font-family: "Grenze", serif;
-    font-weight: 666;
-    font-style: normal;
-    text-align: center;
+    font-size: 80px;
     letter-spacing: 0.5rem;
-    font-size: 88px;
-    position: relative;
-    z-index: 2;
+    font-family: 'Insomnia 1', serif; 
+    font-style: normal;
+    font-weight: 666;
+    text-align: center;
     text-shadow: 2px 2px #000;
+    margin-bottom: 0px; /* pulls Ruins up tighter */
+}
+
+.logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: base;
+    gap: 30px;
+}   
+
+.skull {
+    width: 84px; /* or whatever fits */
+    height: auto;
+    transform: rotate(2deg);
 }
 
 #sublogo {
-    padding: 0rem;
-    font-size: 66px;
-    margin-top: .3px;
-    font-family: "Grenze", serif;
-
+    font-family: 'I Still Know', serif;
+    font-size: 47px;
+    font-weight: 333;
+    letter-spacing: 1rem;
+    color: darkred;
+    text-shadow: 2px 2px #000;
+    margin-top: 0.3rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    filter: contrast(120%) brightness(90%);
+    transform: rotate(-0.3deg);
 }
 
+@font-face {
+    font-family: 'Insomnia 1'; 
+    src: url('fonts/Insomnia 1.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'I Still Know'; 
+    src: url('fonts/I Still Know.ttf') format('truetype');
+}
 
 #main-page-header {
     display: center;
+    text-align: center; 
 }
 
 nav a {
@@ -87,7 +115,7 @@ nav {
 }
 
 .dripping-text {
-    color: crimson;
+    color: whitesmoke;
     font-size: 1.2rem;
     font-weight: 666;
     font-family: 'Times New Roman', Times, serif;
