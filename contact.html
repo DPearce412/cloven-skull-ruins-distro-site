@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Summon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="logo">Cloven Skull</h1>
+        <nav>
+            <a href="index.html">Ruins</a>
+            <a href="releases.html">Deeds</a>
+            <a href="order.html">Commit</a>
+            <a href="contact.html">Summon</a>
+        </nav>
+    </header>
+    <marquee behavior="scroll" direction="left" scrollamount="6" class="dripping-text"> ⸸ ARCANE AUDIO ☽ OBSCURE
+        TEXTS ❖ TRADES ACCEPTED ☽ UNDERGROUND ONLY ⸸ </marquee>
+
+    <div class="form-group">
+
+        <form id="contact-form" action="https://formspree.io/f/mpwdarvl" method="POST" onsubmit="clearForm()">
+            <label for="form-body">Speak into the Skull:</label><br>
+            <textarea name="message" id="form-body" rows="6" cols="40"
+                placeholder="The spirits are listening..."></textarea>
+            <label for="email">Your email address:</label><br>
+            <input type="email" id="email" name="email" required><br><br><br>
+            <button type="submit">Cast</button>
+    </form>
+    </div>
+
+
+</body>
+
+<script src="script.js"></script>
+
+
+<script>
+
+    function clearForm() {
+        console.log("Clear form");
+        window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
+        }
+        setTimeout(() => {
+            document.getElementById("contact-form").reset();
+        }, 1000); // delay to ensure Formspree submits first
+    }
+</script>
+
+
+</html>

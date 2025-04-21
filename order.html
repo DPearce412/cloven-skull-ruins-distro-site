@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Commit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="logo">Cloven Skull</h1>
+
+        <nav>
+            <a href="index.html">Ruins</a>
+            <a href="releases.html">Deeds</a>
+            <a href="order.html">Commit</a>
+            <a href="contact.html">Summon</a>
+        </nav>
+    </header>
+
+    <marquee behavior="scroll" direction="left" scrollamount="6" class="dripping-text"> ⸸ ARCANE AUDIO ☽ OBSCURE
+        TEXTS ❖ TRADES ACCEPTED ☽ UNDERGROUND ONLY ⸸ </marquee>
+
+    <br><br><br>
+    <div id="basket">
+        <h2>Your selection:</h2>
+        <ul id="basket-items"></ul>
+
+        <p id="grand-total"><strong>Total (before shipping): </strong></p>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const basket = JSON.parse(localStorage.getItem("basket")) || [];
+            // const inventory = JSON.parse(localStorage.getItem("inventory")) || {};
+            const basketList = document.getElementById("basket-items");
+            const basketInput = document.getElementById("basket-hidden");
+            let total = 0;
+
+            function getItemIdFromDescription(desc) {
+                if (desc.includes("bcw-e-horror")) return "bcw-e-horror";
+                if (desc.includes("4-way-split")) return "4-way-split";
+                if (desc.includes("masquemortuaire")) return "masquemortuaire";
+                return null;
+            }
+
+            // console.log("BASKET DEBUG:", basket);
+            function updateBasketDisplay() {
+                basketList.innerHTML = "";
+                total = 0;
+
+                basket.forEach((item, index) => {
+                    const li = document.createElement("li");
+                    li.textContent = `${item.name}`;
+
+                    const removeBtn = document.createElement("button");
+                    removeBtn.textContent = "💀";
+                    removeBtn.style.marginLeft = "10px";
+                    removeBtn.style.background = "none";
+                    removeBtn.style.border = "none";
+                    removeBtn.style.color = "crimson";
+                    removeBtn.style.cursor = "pointer";
+                    removeBtn.style.fontWeight = "bold";
+
+                    removeBtn.addEventListener("click", () => {
+                        // Restore inventory using item ID (must be extractable from item string)
+                        const id = item.id;
+                        // if (inventory[id] !== undefined) {
+                        //     inventory[id] += 1;
+                        //     localStorage.setItem("inventory", JSON.stringify(inventory));
+                        // }
+
+                        basket.splice(index, 1);
+                        localStorage.setItem("basket", JSON.stringify(basket));
+                        updateBasketDisplay();
+                        if (basketInput) {
+                            basketInput.value = basket.map(i => i.name).join("\n");
+                        }
+                    });
+
+                    li.appendChild(removeBtn);
+                    basketList.appendChild(li);
+
+                    if (item.price) {
+                        const numericPrice = parseFloat(item.price.replace("$", ""));
+                        if (!isNaN(numericPrice)) {
+                            total += numericPrice;
+                        }
+                    }
+                });
+
+                const totalDisplay = document.getElementById("grand-total");
+                if (totalDisplay) {
+                    totalDisplay.innerHTML = `<strong>Total (before shipping): $${total.toFixed(2)}</strong>`;
+                }
+
+                if (basketInput) {
+                    basketInput.value = basket.map(i => i.name).join("\n");
+                }
+            }
+
+            updateBasketDisplay();
+
+        };
+    </script>
+
+    <button id="clear-basket">Empty Contents</button>
+
+    <script>
+        const clearBtn = document.getElementById("clear-basket");
+        if (clearBtn) {
+            clearBtn.addEventListener("click", function () {
+                localStorage.removeItem("basket");
+                location.reload(); // refresh the page to update the basket view
+            });
+        }
+    </script>
+
+    <!--TODO: Put some prevention on empty forms sent through formspree-->
+
+
+    <div id="order-form">
+        <form id="order-form" action="https://formspree.io/f/mldjzlov" method="POST" onsubmit="clearForm()">
+            <label for="name" id="name-form">Your name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Your email address:</label><br>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Your mailing address:</label><br>
+            <textarea name="address" id="address" rows="5" required></textarea><br><br>
+            <input type="hidden" name="basket" id="basket-hidden">
+            <button type="submit">Commit your deeds</button>
+        </form>
+    </div>
+
+    <script>
+        function clearForm() {
+            console.log("Clear form");
+            window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
+        }
+            setTimeout(() => {
+                document.getElementById("order-form").reset();
+                localStorage.removeItem("basket");
+            }, 1000); // delay to ensure Formspree submits first
+        }
+
+        
+    </script>
+
+
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

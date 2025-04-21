@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Deeds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="logo">Cloven Skull</h1>
+
+        <nav>
+            <a href="index.html">Ruins</a>
+            <a href="releases.html">Deeds</a>
+            <a href="order.html">Commit</a>
+            <a href="contact.html">Summon</a>
+        </nav>
+        <marquee behavior="scroll" direction="left" scrollamount="6" class="dripping-text"> ⸸ ARCANE AUDIO ☽ OBSCURE
+            TEXTS ❖ TRADES ACCEPTED ☽ UNDERGROUND ONLY ⸸ </marquee>
+    </header>
+    <section class="releases-grid">
+
+        <div class="release-item" data-id="bcw-e-horror" data-title="Existential Horror" data-artist="BLACK CANDLE WAX"
+            data-format="Pro-tape" data-label="Vile Reliquary" data-price="$6">
+            <img src="" alt="CS 1">
+            <p>
+                <em>Existential Horror</em><br>
+                <strong>BLACK CANDLE WAX</strong><br>
+                Pro-tape - Vile Reliquary<br>$6
+            </p>
+            <button onclick="addToBasket(this)">Add to Basket</button>
+        </div>
+
+
+        <div class="release-item" data-id="stock1" data-title="Title" data-artist="ARTIST" data-format="Format"
+            data-label="Label" data-price="$">
+            <img src="" alt="CS 2">
+            <p>TITLE - Artist Name<br><em>Format: CD-r</em><br>$6</p>
+            <button onclick="addToBasket(this)">Add to Basket</button>
+        </div>
+
+
+        <div class="release-item" data-id="4-way-split" data-title="Cadavre Exquis" data-artist="4-WAY SPLIT"
+            data-format="Pro-tape" data-label="Malevolent Relics" data-price="$6">
+            <img src="" alt="CS 3">
+            <p><em>Cadavre Exquis: Faces of the Drawn and Quartered Moon</em><br>YEW, CALLING OF PHASMIC PRESENCE<br>
+                HAEMOPTYSIS, EYES IN DARKNESS WITHOUT FORM<br><em>CS - Malevolent Relics</em><br>$6</p>
+            <button onclick="addToBasket(this)">Add to Basket</button>
+            <iframe style="border: 0; width: 75%; height: 42px;"
+                src="https://bandcamp.com/EmbeddedPlayer/album=3829652811/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                seamless><a
+                    href="https://eyesindarknesswithoutform.bandcamp.com/album/cadavre-exquis-faces-of-the-drawn-and-quartered-moon">Cadavre
+                    Exquis: Faces of the Drawn and Quartered Moon by Eyes In Darkness Without Form</a></iframe>
+        </div>
+
+        <div class="release-item" data-id="masquemortuaire" data-title="L'Appel de la Nuit"
+            data-artist="MASQUE MORTUAIRE" data-format="CD-R" data-label="Released by Artist" data-price="$6">
+            <img src="images\MM_CD_r.jpg" alt="CD 1">
+            <p><em>L&#39;Appel de la Nuit</em><br><strong>MASQUE MORTUAIRE</strong>
+                <br>CD-R - Released by the artist<br>$6
+            </p>
+            <button onclick="addToBasket(this)">Add to Basket</button>
+            <iframe style="border: 0; width: 75%; height: 42px;" class="bandcamp-player"
+                src="https://bandcamp.com/EmbeddedPlayer/album=78073703/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                seamless><a href="https://masquemortuaire.bandcamp.com/album/lappel-de-la-nuit">L&#39;Appel de la Nuit
+                    by Masque Mortuaire</a></iframe>
+        </div>
+
+        <div class="release-item" data-id="stock2" data-title="Title" data-artist="ARTIST" data-format="Format"
+            data-label="Label" data-price="$">
+            <img src="" alt="CD 2">
+            <p>TITLE - Artist Name<br><em>Format: CD-r</em><br>$6 plus shipping.</p>
+            <button onclick="addToBasket(this)">Add to Basket</button>
+        </div>
+
+        <div class="release-item" data-id="stock3" data-title="Title" data-artist="ARTIST" data-format="Format"
+            data-label="Label" data-price="$">
+            <img src="" alt="CS 4">
+            <p>TITLE - Artist Name<br><em>Format: CD-r</em><br>$6 plus shipping.</p>
+            <button onclick="addToBasket(this)">Add to Basket</button>
+        </div>
+
+    </section>
+
+    <div id="custom-alert" class="hidden">
+        <div class="alert-box">
+            <p id="alert-message"></p>
+            <button id="close-alert">OK</button>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
