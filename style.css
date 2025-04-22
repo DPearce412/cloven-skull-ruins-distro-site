@@ -32,16 +32,11 @@ body {
     transform: rotate(2deg);
 }
 
-.sublogo-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-left: 3.5rem; 
-}
+
 
 #sublogo {
-    display: inline-block; /* or block */
+    display: inline-block; 
+    margin-left: 6rem;
     text-align: center;
     letter-spacing: 5.5rem;
     font-family: 'I Still Know', serif;
