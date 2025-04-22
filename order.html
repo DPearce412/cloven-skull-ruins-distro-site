@@ -15,10 +15,14 @@
 
 <body>
     <header id="main-page-header">
-        <img src="images\Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull">
-        <h1 id="logo" class="giallo-flash">Cloven Skull</h1>
-        <img src="images\Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull"><br>
-        <div id="sublogo" class="giallo-flash">RUINS</div>
+        <div class="logo-wrap">
+            <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull">
+            <h1 id="logo" class="giallo-flash">Cloven Skull</h1>
+            <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull right" class="skull">
+        </div>
+        <div class="sublogo-wrap">
+            <div id="sublogo" class="giallo-flash">RUINS</div>
+        </div>
 
         <nav>
             <a href="index.html">Ruins</a>
@@ -32,6 +36,10 @@
         TEXTS ❖ TRADES ACCEPTED ☽ UNDERGROUND ONLY ⸸ </marquee>
 
     <br><br><br>
+    <p id="order-instructions">
+        Once you've selected your items, fill out the form below.<br>
+        Then await the response with your total including shipping and payment instructions.
+    </p><br><br>
     <div id="basket">
         <h2>Your selection:</h2>
         <ul id="basket-items"></ul>
@@ -114,7 +122,7 @@
         };
     </script>
 
-    <button id="clear-basket">Empty Contents</button>
+    <button id="clear-basket">EMPTY CONTENTS</button>
 
     <script>
         const clearBtn = document.getElementById("clear-basket");
@@ -140,7 +148,7 @@
             <label for="address">Your mailing address:</label><br>
             <textarea name="address" id="address" rows="5" required></textarea><br><br>
             <input type="hidden" name="basket" id="basket-hidden">
-            <button type="submit">Commit your deeds</button>
+            <button type="submit">COMMIT</button>
         </form>
     </div>
 

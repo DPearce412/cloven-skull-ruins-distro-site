@@ -1,5 +1,6 @@
 body {
     background-color: black; 
+    font-size: 1rem;
     color: red;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
@@ -8,7 +9,7 @@ body {
 }
 
 #logo {
-    font-size: 80px;
+    font-size: 6vw;
     letter-spacing: 0.5rem;
     font-family: 'Insomnia 1', serif; 
     font-style: normal;
@@ -21,7 +22,7 @@ body {
 .logo-wrap {
     display: flex;
     justify-content: center;
-    align-items: base;
+    align-items: center;
     gap: 30px;
 }   
 
@@ -31,19 +32,39 @@ body {
     transform: rotate(2deg);
 }
 
+.sublogo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 3.5rem; 
+}
+
 #sublogo {
+    display: inline-block; /* or block */
+    text-align: center;
+    letter-spacing: 5.5rem;
     font-family: 'I Still Know', serif;
-    font-size: 47px;
+    font-size: 67px;
     font-weight: 333;
-    letter-spacing: 1rem;
     color: darkred;
     text-shadow: 2px 2px #000;
     margin-top: 0.3rem;
     margin-bottom: 2rem;
-    display: inline-block;
     filter: contrast(120%) brightness(90%);
     transform: rotate(-0.3deg);
 }
+
+
+
+.full-width-image {
+    width: 100%;
+    max-width: 100%;
+    height: 33%;
+    display: block;
+    margin: 0 auto;
+}
+
 
 @font-face {
     font-family: 'Insomnia 1'; 
@@ -56,7 +77,6 @@ body {
 }
 
 #main-page-header {
-    display: center;
     text-align: center; 
 }
 
@@ -71,7 +91,6 @@ nav a {
 
 nav {
     margin-bottom: 50px;
-    display: center;
 }
 
 #bloodCanvas {
@@ -85,8 +104,18 @@ nav {
     z-index: 1;
 }
 
+#order-instructions {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 1.5vw;;
+    font-weight: 500;
+}
 
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 
 
@@ -267,4 +296,26 @@ button #clear-basket {
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .logo-wrap {
+        gap: 6px;
+    }
+
+    #logo {
+        font-size: 8vw;
+        letter-spacing: 0.2rem;
+    }
+
+    .skull {
+        width: 25px;
+    }
+
+    nav a {
+        display: block;
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
 }

@@ -16,10 +16,14 @@
 <body>
 
     <header id="main-page-header">
-        <img src="images\Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull">
-        <h1 id="logo" class="giallo-flash">Cloven Skull</h1>
-        <img src="images\Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull"><br>
-        <div id="sublogo" class="giallo-flash">RUINS</div>
+        <div class="logo-wrap">
+            <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull">
+            <h1 id="logo" class="giallo-flash">Cloven Skull</h1>
+            <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull right" class="skull">
+        </div>
+        <div class="sublogo-wrap">
+            <div id="sublogo" class="giallo-flash">RUINS</div>
+        </div>
 
         <nav>
             <a href="index.html">Ruins</a>
@@ -47,16 +51,16 @@
         <div class="release-item" data-id="stock1" data-title="Title" data-artist="ARTIST" data-format="Format"
             data-label="Label" data-price="$">
             <img src="" alt="CS 2">
-            <p>TITLE - Artist Name<br><em>Format: CD-r</em><br>$6</p>
+            <p>TITLE - Artist Name<br>Tape<br>$6</p>
             <button onclick="addToBasket(this)">Add to Basket</button>
         </div>
 
 
         <div class="release-item" data-id="4-way-split" data-title="Cadavre Exquis" data-artist="4-WAY SPLIT"
             data-format="Pro-tape" data-label="Malevolent Relics" data-price="$6">
-            <img src="" alt="CS 3">
-            <p><em>Cadavre Exquis: Faces of the Drawn and Quartered Moon</em><br>YEW, CALLING OF PHASMIC PRESENCE<br>
-                HAEMOPTYSIS, EYES IN DARKNESS WITHOUT FORM<br><em>CS - Malevolent Relics</em><br>$6</p>
+            <img src="images\CE_CS.jpg" alt="CS 3">
+            <p><em>Cadavre Exquis: Faces of the Drawn and Quartered Moon</em><br>YEW / CALLING OF PHASMIC PRESENCE /<br>
+                HAEMOPTYSIS / EYES IN DARKNESS WITHOUT FORM<br>Pro-tape - Malevolent Relics<br>$6</p>
             <button onclick="addToBasket(this)">Add to Basket</button>
             <iframe style="border: 0; width: 75%; height: 42px;"
                 src="https://bandcamp.com/EmbeddedPlayer/album=3829652811/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
@@ -78,11 +82,17 @@
                     by Masque Mortuaire</a></iframe>
         </div>
 
-        <div class="release-item" data-id="stock2" data-title="Title" data-artist="ARTIST" data-format="Format"
-            data-label="Label" data-price="$">
-            <img src="" alt="CD 2">
-            <p>TITLE - Artist Name<br><em>Format: CD-r</em><br>$6 plus shipping.</p>
-            <button onclick="addToBasket(this)">Add to Basket</button>
+        <div class="release-item" data-id="4-way-split-cd" data-title="Cadavre Exquis" data-artist="4-WAY SPLIT"
+        data-format="CD" data-label="Malevolent Relics" data-price="$6">
+        <img src="images\CE_CD.jpg" alt="CD 2">
+        <p><em>Cadavre Exquis: Faces of the Drawn and Quartered Moon</em><br>YEW / CALLING OF PHASMIC PRESENCE /<br>
+            HAEMOPTYSIS / EYES IN DARKNESS WITHOUT FORM<br>CD - Malevolent Relics<br>$6</p>
+        <button onclick="addToBasket(this)">Add to Basket</button>
+        <!-- <iframe style="border: 0; width: 75%; height: 42px;"
+            src="https://bandcamp.com/EmbeddedPlayer/album=3829652811/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+            seamless><a
+                href="https://eyesindarknesswithoutform.bandcamp.com/album/cadavre-exquis-faces-of-the-drawn-and-quartered-moon">Cadavre
+                Exquis: Faces of the Drawn and Quartered Moon by Eyes In Darkness Without Form</a></iframe> -->
         </div>
 
         <div class="release-item" data-id="stock3" data-title="Title" data-artist="ARTIST" data-format="Format"
