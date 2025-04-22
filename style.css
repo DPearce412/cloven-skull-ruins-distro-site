@@ -295,15 +295,15 @@ button #clear-basket {
 
 
 @media (max-width: 768px) {
-    .logo-wrap {
-        gap: 6px;
-    }
 
     #logo {
         font-size: 8vw;
         letter-spacing: 0.2rem;
     }
 
+    #sublogo {
+        max-width: 400;
+    }
     .skull {
         width: 25px;
     }
