@@ -295,22 +295,43 @@ button #clear-basket {
 
 
 @media (max-width: 768px) {
+    header#main-page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .skull {
+        width: 50px;
+        margin: 0.5rem 0;
+        transform: rotate(0deg);
+    }
 
     #logo {
-        font-size: 8vw;
+        font-size: 10vw;
         letter-spacing: 0.2rem;
+        margin: 0.5rem 0;
+    }
+
+    #order-instructions {
+        font-size: 4vw; 
     }
 
     #sublogo {
-        max-width: 400;
+        font-size: 9vw;
+        letter-spacing: 0.5rem;
+        margin: 0.5rem 0 1rem;
     }
-    .skull {
-        width: 25px;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav a {
-        display: block;
-        margin: 15px 0;
-        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        font-size: 1.3rem;
     }
 }
