@@ -60,6 +60,15 @@ body {
     margin: 0 auto;
 }
 
+iframe {
+    border: none !important;
+    padding: 0 !important;
+    margin: 20px auto 0 !important; 
+    display: block !important;  
+    width: 100% !important;  
+    height: auto !important; 
+    max-width: 350px; 
+}
 
 @font-face {
     font-family: 'Insomnia 1'; 
@@ -188,9 +197,9 @@ button:hover {
 .form-group {
     width: 100%;
     max-width: 600px;
-    /* or whatever fits your layout */
+   
     margin: 0 auto;
-    /* centers the whole group if desired */
+    
 }
 
 label {
@@ -306,6 +315,11 @@ button #clear-basket {
         width: 50px;
         margin: 0.5rem 0;
         transform: rotate(0deg);
+    }
+
+    .releases-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
     }
 
     #logo {
