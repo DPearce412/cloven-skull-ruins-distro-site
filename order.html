@@ -16,11 +16,11 @@
 <body>
     <header id="main-page-header">
 
-            <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull">
-            <h1 id="logo" class="giallo-flash">Cloven Skull</h1>
-            <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull right" class="skull">
+        <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull left" class="skull">
+        <h1 id="logo" class="giallo-flash">Cloven Skull</h1>
+        <img src="images/Crâne_17_de_la_Sima_de_los_Huesos.png" alt="Skull right" class="skull">
 
-            <div id="sublogo" class="giallo-flash">RUINS</div>
+        <div id="sublogo" class="giallo-flash">RUINS</div>
 
 
         <nav>
@@ -138,12 +138,14 @@
 
 
     <div id="order-form">
-        <form id="order-form" action="https://formspree.io/f/mldjzlov" method="POST" onsubmit="clearForm()">
+        <form id="order-form" action="https://formspree.io/f/mldjzlov" method="POST" onsubmit="return validateForm()"
+            onsubmit="clearForm()">
             <label for="name" id="name-form">Your name:</label>
             <input type="text" id="name" name="name" required><br><br>
 
             <label for="email">Your email address:</label><br>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address.">
 
             <label for="address">Your mailing address:</label><br>
             <textarea name="address" id="address" rows="5" required></textarea><br><br>
@@ -153,6 +155,29 @@
     </div>
 
     <script>
+        function validateForm(event) {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+            if (!name || !email || !address) {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+
+            if (basket.length === 0) {
+                alert("Your basket is empty.");
+                return false;
+            }
+
+            setTimeout(() => {
+                document.getElementById("order-form").reset();
+                localStorage.removeItem("basket");
+            }, 1000);
+
+            return true;
+        }
         function clearForm() {
             console.log("Clear form");
             window.onbeforeunload = () => {
@@ -162,12 +187,11 @@
             }
             setTimeout(() => {
                 document.getElementById("order-form").reset();
-                localStorage.removeItem("basket");
             }, 1000); // delay to ensure Formspree submits first
         }
 
-
     </script>
+
 
 
 

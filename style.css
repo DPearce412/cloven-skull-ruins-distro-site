@@ -168,8 +168,10 @@ nav {
 
 
 .release-item img {
-    max-width: 25rem;
-    height: auto;
+    width: 100%;
+    max-width: 400px;
+    height: 400px; 
+    object-fit: cover;
     border: 2px solid crimson;
     display: block;
     margin: 0 auto 10px auto;
