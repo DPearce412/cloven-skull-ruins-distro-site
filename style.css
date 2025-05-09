@@ -1,4 +1,5 @@
 body {
+
     background-color: black; 
     font-size: 1rem;
     color: red;
@@ -6,7 +7,9 @@ body {
     text-align: center;
     margin: 0;
     padding-top: 50px;
+    cursor: auto;
 }
+
 
 #logo {
     font-size: 6vw;
@@ -141,6 +144,15 @@ nav {
     }
 }
 
+#welcome-script {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 333;
+    color: darkred;
+    text-shadow: 2px 2px #000;
+
+}
 .giallo-flash {
     animation: gialloFlash 0.8s infinite;
     padding: 10px;
@@ -195,6 +207,14 @@ button {
 
 button:hover {
     background-color: crimson;
+}
+
+a:hover,
+button:hover,
+input[type='submit'],
+input[type='button'] {
+    cursor: url(images/hailz.cur), pointer;
+    
 }
 
 .form-group {
